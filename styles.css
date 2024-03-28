@@ -1,0 +1,89 @@
+/* Estilos para el cuerpo de la página */
+body {
+    font-family: Arial, sans-serif;  /* Tipo de fuente para el texto */
+    background-color: #000000; /* Color de fondo */
+    color: #ffffff; /* Color de texto */
+    margin: 0; /* Elimina los márgenes por defecto del cuerpo */
+    padding: 0; /* Elimina el relleno por defecto del cuerpo */
+    display: flex; /* Modelo de caja flexible para el diseño */
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    height: 100vh; /* Altura del 100% de la ventana visible  */
+} 
+
+h1 {
+    font-size: 36px; /* Tamaño de la fuente del título */
+    text-align: center; /* Alineación del texto al centro */
+    border: 2px solid #ffffff; /* Borde sólido blanco */
+    padding: 10px; /* Relleno interno del título */
+    border-radius: 8px; /* Borde redondeado */
+    color: #ffffff; /* Color del texto */
+}
+
+/* Estilos para el contenedor principal de la calculadora */
+.calculadora {
+    background-color: #4B0082; /* Color de fondo índigo */
+    border-radius: 15px; /* Borde redondeado */
+    box-shadow: 0 0 20px rgba(0, 0, 0,0.2); /* Sombra con opacidad */
+    padding: 20px; /* Relleno interno del contenedor */
+    text-align: center; /* Alineación del texto al centro */
+    width: 400px; /* Ancho del contenedor */
+    margin: 20px; /* Márgenes externos del contenedor */
+    color: #ffffff; /* Color del texto */
+}
+
+/* Estilos para la tabla de entrada de datos */
+table {
+    width: 100%; /* Ancho completo de la tabla */
+    border-collapse: collapse; /* Colapsar bordes de la tabla */
+    margin-bottom: 20px; /* Margen inferior de la tabla */
+}
+
+table, th, td {
+    border: 1px solid #ddd; /* Bordes de 1 píxel con sombra gris */
+}
+
+th, td {
+    padding: 10px; /* Relleno interno de celdas */
+    text-align: center; /* Alineación del texto al centro */
+}
+
+th {
+    background-color: #f2f2f2; /* Color de fondo gris claro para encabezados */
+}
+
+/* Estilos para el formulario */
+form {
+    text-align: center; /* Alineación del texto al centro */
+}
+
+input[type="number"] {
+    width: 100%; /* Ancho completo del campo de número */
+    padding: 10px; /* Relleno interno del campo de número */
+    box-sizing: border-box; /* Modelo de caja que incluye el borde y el relleno en el ancho total */
+    margin-bottom: 10px; /* Margen inferior del campo de número */
+}
+
+input[type="submit"] {
+    padding: 10px 30px; /* Relleno interno del botón de envío */
+    background-color: #4B0082; /* Color de fondo índigo */
+    color: #ffffff;  /* Color del texto blanco */
+    box-sizing: border-box; /* Modelo de caja que incluye el borde y el relleno en el ancho total */
+    border-radius: 10px; /* Borde redondeado */
+    cursor: pointer;  /* Cambia el cursor a una mano al pasar sobre el botón */
+}
+
+input[type="submit"]:hover {
+    background-color: #800080; /* Cambio de color al pasar sobre el botón */
+}
+
+/* Estilos para la visualización del resultado */
+.result {
+    text-align: center; /* Alineación del texto al centro */
+    margin-top: 20px; /* Margen superior del resultado */
+    font-weight: bold; /* Texto en negrita */
+    background-color: #800080; /* Color de fondo púrpura */
+    padding: 10px; /* Relleno interno del resultado */
+    border-radius: 8px; /* Bordes redondeados */
+    color: #ffffff; /* Color del texto blanco */
+}

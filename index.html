@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de IMC</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <div class="calculadora">
+        <h1>Cálculo de IMC</h1>
+        <form id="imcForm">
+            <table>
+                <tbody>
+                    <tr>
+                        <td><label for="altura"><b>Ingresa el valor de altura (m):</b></label></td>
+                        <td><input id="altura" name="altura" required="required" step="0.01" type="number"/></td>
+                    </tr>
+                    <tr>
+                        <td><label for="peso"><b>Ingresa el valor de peso (kg):</b></label></td>
+                        <td><input id="peso" name="peso" required="required" step="0.1" type="number"/></td>
+                    </tr>
+                    <tr align="center">
+                        <td colspan="2" rowspan="1"><input value="Calcular IMC" type="submit"/></td>
+                    </tr>
+                </tbody>
+            </table>
+        </form>
+        <div id="resultado" class="result"></div>
+    </div>
+
+    <script>
+        // Función para calcular el IMC
+        function calcularIMC() {
+            event.preventDefault(); // Evita que el formulario se envíe
+
+            // Obtiene los valores de altura y peso del formulario
+            let altura = parseFloat(document.getElementById('altura').value);
+            let peso = parseFloat(document.getElementById('peso').value);
+
+            // Verifica que los valores sean válidos
+            if (altura > 0 && peso > 0) {
+                // Calcula el IMC
+                let IMC = peso / (altura * altura);
+                IMC = IMC.toFixed(1); // Redondea a un decimal
+
+                // Define el diagnóstico basado en el IMC
+                let diagnostico;
+                if (IMC < 18.5) {
+                    diagnostico = 'Bajo Peso';
+                } else if (IMC < 25) {
+                    diagnostico = 'Saludable';
+                } else if (IMC < 30) {
+                    diagnostico = 'Sobrepeso';
+                } else if (IMC < 40) {
+                    diagnostico = 'Obesidad';
+                } else {
+                    diagnostico = 'Obesidad Severa';
+                }
+
+                // Muestra el resultado
+                document.getElementById('resultado').innerHTML = `Valor de IMC: ${IMC} - Diagnóstico: ${diagnostico}`;
+            } else {
+                // Muestra un mensaje de error si los valores ingresados no son válidos
+                document.getElementById('resultado').innerHTML = 'Por favor, ingresa valores válidos para altura y peso.';
+            }
+        }
+
+        // Agrega un evento de escucha para el envío del formulario
+        document.getElementById('imcForm').addEventListener('submit', calcularIMC);
+    </script>
+</body>
+</html>
+
